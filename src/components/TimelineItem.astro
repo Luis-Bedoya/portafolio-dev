@@ -5,9 +5,10 @@ interface props {
   description: string;
   employmentType:string;
   link: string;
+  bulletPoints:string[];
 }
 
-const { date, title, description, link,employmentType } = Astro.props;
+const { date, title, description, link,employmentType,bulletPoints } = Astro.props;
 ---
 
 <li class="mb-10 ms-4" >
@@ -27,6 +28,11 @@ const { date, title, description, link,employmentType } = Astro.props;
   </h3>
   <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-200 text-pretty">
     {description}
+    <ul>
+      {bulletPoints.map((bullet:string) =>
+        <li>{bullet}</li>
+      )}
+    </ul>
   </p>
 
   {
