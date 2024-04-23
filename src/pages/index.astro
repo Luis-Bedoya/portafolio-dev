@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import GithubIcon from "../components/icons/Github.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialButton from "../components/SocialButton.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Timeline from "../components/Timeline.astro";
+import BriefcaseIcon from "../components/icons/Briefcase.astro";
+import CodeIcon from "../components/icons/code.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout title="Luis Castano|Portafolio">
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32" id="top">
+      <svg
+        class="rounded-full w-12 h-12 mb-4"
+        xmlns="http://www.w3.org/2000/svg"
+        class="rounded-full size-12"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path
+          d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path
+          d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"
+        ></path></svg
+      >
+      <h1
+        class="text-white  font-bold   gap-x-4 flex flex-row
+        text-3xl md:text-4xl lg:text-5xl
+        pb-6 lg:pb-10"
+      >
+        I am Luis Castano
+        <a
+          href="https://www.linkedin.com/in/luis-castano/"
+          class="flex justify-center items-center"
+        >
+          <Badge>Avalable to work</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+        <spam class="text-yellow-200"> Junior Java Back end developer </spam>
+        working in integratinons throught APIs with Spring boot and learning to become a 
+        <spam class="text-blue-200"> future Full stack developer</spam> with flutter. 
+        Based on London. I speak Spanish natively and English fluenlty.
+      </h2>
+      <nav class="flex gap-4 lg:gap-x-4 mt-8 flex-wrap">
+        <SocialButton href="https://github.com/Luis-Bedoya">
+          <GithubIcon class="size-4 md:size-6" />
+          Github
+        </SocialButton>
+        <SocialButton href="https://github.com/Luis-Bedoya">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialButton>
+        <SocialButton href="mailto:luis_6_14@hotmail.com:">
+          <MailIcon class="size-4 md:size-6" />
+          luis_6_14@hotmail.com
+        </SocialButton>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="Experience">
+      <h2 class="text-2xl lg:text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <BriefcaseIcon class="size-7" />
+        Work experience 
+      </h2>
+      <Timeline />
+    </SectionContainer>
+
+    <SectionContainer id="Projects">
+      <h2 class="text-2xl lg:text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeIcon class="size-7" />
+        Projects
+      </h2>
+      <Projects/>
+    </SectionContainer>
+  </main>
+</Layout>
+
+<style></style>

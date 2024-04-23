@@ -1,0 +1,18 @@
+---
+import type { Code } from "astro:components";
+import TimelineItem from "./TimelineItem.astro";
+const EXPERIENCE = [
+  {
+    date: "Actual position",
+    title: "Junior back-end developer - Inara Transfers",
+    description:
+      "Developing different microservices to connect with merchants and providers. Also improving the workflow to automate tasks with Spring Boot.",
+    employmentType: "Part-time",
+    link: "", // Replace "#" with the actual URL if available
+  }
+];
+---
+
+<ol class="relative border-s border-gray-200 dark:border-gray-300 ml-3">
+  {EXPERIENCE.map((Experience) => <TimelineItem {...Experience} />)}
+</ol>
