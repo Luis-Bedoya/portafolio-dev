@@ -1,6 +1,10 @@
 ---
 import AstroIcon from "./icons/AstroIcon.astro";
 import TailwindIcon from "../components/icons/Tailwind.astro";
+import StartIcon from "../components/icons/Start.astro";
+import PlaceHolderIcon from "../components/icons/PlaceHolder.astro";
+import StatusIcon from "../components/icons/Status.astro";
+
 
 const TAGS = {
   ASTRO: {
@@ -16,9 +20,30 @@ const TAGS = {
 };
 const PROJECTS = [
   {
-    title: "(Place holder for projects) Luis Castano - Portafolio",
+    title: "Portafolio",
     description:
     "This is a place holder where I show this website as a project.",
+    link: "#",
+    github: "#",
+    image: "/projects/svgl.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
+  {
+    title: "Lorem ipsum dolor sit amet",
+    description:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Semper risus in hendrerit gravida rutrum quisque. Aliquam nulla facilisi cras fermentum odio eu feugiat pretium nibh.",
+    link: "#",
+    github: "#",
+    image: "/projects/svgl.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
+];
+const FAV_PROJECT = [
+  {
+    title: "Currency finder page",
+    status: "in progress",
+    description:
+    "This is a website created to find actual notes of each country and avoid any scam in bureau exchanges",
     link: "#",
     github: "#",
     image: "/projects/svgl.webp",
@@ -28,11 +53,16 @@ const PROJECTS = [
 ---
 
 {
-  PROJECTS.map((project) => (
-    <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
-        {project.title}
+  FAV_PROJECT.map((project) => (
+    <article class="mb-5">
+      <h3 class=" text-2xl font-semibold m-1 flex items-center text-yellow-200 mb-2 ">
+        <StartIcon class="size-4 md:size-6 mr-2" ></StartIcon>  
+        Highlight -  {project.title}
       </h3>
+      <spam class="text-2l font-semibold m-1 flex items-center text-blue-300  ">
+        <StatusIcon class="mr-2"></StatusIcon>
+        {project.status}
+      </spam>
       <p class="text-lg mb-4 text-pretty">{project.description}</p>
       <ul class="flex gap-x-4 flex-row">
         {project.tags.map((tag) => (
@@ -44,8 +74,44 @@ const PROJECTS = [
           </li>
         ))}
       </ul>
+      {
+        project.image ?
+        <img
+        class="rounded shadow-xl shadow-white/5 md-3"
+        src={project.image}
+        alt={`Image of the project ${project.image}`}/> 
+        : <PlaceHolderIcon class="w-full h-auto object-contain "></PlaceHolderIcon>
+      }
+    </article>
+  ))
+}
+
+{
+  PROJECTS.map((project) => (
+    <article class="
+      rounded-md border border-white/10 md:flex 
+      gap-x-2 mb-3 
+      px-2 py-2 md:px-4 text-xs md:text-base
+    bg-white/5
+      hover:scale-110 hover:bg-white/10 transition-">
+      <div>
+        <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
+          {project.title}
+        </h3>
+        <p class="text-lg mb-4 text-pretty">{project.description}</p>
+        <ul class="flex gap-x-4 flex-row">
+          {project.tags.map((tag) => (
+            <li>
+              <span class={`flex gap-x-2 rounded-full text-xs py-1 px-2 ${tag.class}`}>
+              <tag.icon class="size-4" />
+              {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
       <img
-        class="rounded shadow-xl shadow-white/5"
+        class="rounded shadow-xl shadow-white/5 md:w-[200px] h-auto object-contain "
         src={project.image}
         alt={`Image of the project ${project.image}`}
       />
