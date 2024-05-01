@@ -92,8 +92,7 @@ const FAV_PROJECT = [
       rounded-md border border-white/10 md:flex 
       gap-x-2 mb-3 
       px-2 py-2 md:px-4 text-xs md:text-base
-    bg-white/5
-      hover:scale-110 hover:bg-white/10 transition-">
+    bg-white/5">
       <div>
         <h3 class="text-2xl font-semibold text-yellow-200 mb-2">
           {project.title}
@@ -111,7 +110,7 @@ const FAV_PROJECT = [
         </ul>
       </div>
       <img
-        class="rounded shadow-xl shadow-white/5 md:w-[200px] h-auto object-contain "
+        class="rounded shadow-xl shadow-white/5 md:w-[200px] h-auto object-contain hover:scale-150 hover:bg-white/10 transition-"
         src={project.image}
         alt={`Image of the project ${project.image}`}
       />
